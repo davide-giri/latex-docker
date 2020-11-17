@@ -27,7 +27,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt update
 RUN apt install -y \
 python python-pip python3 python3-pip \
-xterm csh ksh zsh tmux git tig wget unzip emacs vim x11-apps gnuplot evince \
+xterm csh ksh zsh tmux git tig wget unzip emacs vim x11-apps gnuplot evince ispell \
 texlive-full texlive-generic-extra texlive-fonts-extra \
 r-base r-base-dev libcurl4-openssl-dev libssl-dev libxml2-dev
 
