@@ -53,8 +53,8 @@
 (global-set-key [(f4)] 'query-replace)
 (global-set-key [(f5)] 'imenu)
 (global-set-key [(f6)] 'speedbar)
-(global-set-key [C-M-down] 'shrink-window) ;Ctrl-Alt-<down-arrow>
-(global-set-key [C-M-up] 'enlarge-window) ;Ctrl-Alt-<up-arrow>
+;;(global-set-key [C-M-down] 'shrink-window) ;Ctrl-Alt-<down-arrow>
+;;(global-set-key [C-M-up] 'enlarge-window) ;Ctrl-Alt-<up-arrow>
 ;(global-set-key "\C-w" 'backward-delete-char)
 ;(global-set-key "\C-x\C-k" 'kill-region)
 
@@ -208,10 +208,10 @@
 (global-set-key (kbd "C-c [") 'comment-region)
 (global-set-key (kbd "C-c ]") 'uncomment-region)
 (global-set-key (kbd "C-c f") 'fill-region)
-(global-set-key (kbd "C-c <up>") 'windmove-up)
-(global-set-key (kbd "C-c <down>") 'windmove-down)
-(global-set-key (kbd "C-c <left>") 'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
+;;(global-set-key (kbd "C-c <up>") 'windmove-up)
+;;(global-set-key (kbd "C-c <down>") 'windmove-down)
+;;(global-set-key (kbd "C-c <left>") 'windmove-left)
+;;(global-set-key (kbd "C-c <right>") 'windmove-right)
 
 ;; Enable flyspell and fill mode with Latex files
 (add-hook 'tex-mode-hook
@@ -280,3 +280,21 @@
 (defun display-ansi-colors ()
   (interactive)
   (ansi-color-apply-on-region (point-min) (point-max)))
+
+;; flyspell
+(require 'flyspell)
+(flyspell-mode +1)
+
+;; ESS package
+(use-package ess
+  :ensure t
+  :init (require 'ess-site))
+
+;; decomment on Windows to avoid conflicts with Docker CLI key bindings
+;;(global-unset-key (kbd "S-<down>"))
+;;(global-unset-key (kbd "S-<up>"))
+;;(global-unset-key (kbd "S-<right>"))
+;;(global-unset-key (kbd "S-<left>"))
+;;(global-unset-key (kbd "C-z"))
+;;(global-unset-key (kbd "C-M-j"))
+;;(global-set-key (kbd "C-M-j") 'suspend-frame)
